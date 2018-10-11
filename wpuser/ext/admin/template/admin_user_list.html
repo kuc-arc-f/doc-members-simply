@@ -1,0 +1,37 @@
+<!-- テンプレート -->
+  <h1>ユーザーリスト</h1> <br />
+
+<table class="table table-striped" border="1">
+<thead>
+	<tr>
+		<th>ID</th>
+		<th>email</th>
+		<th>update</th>
+		<th>action</th>
+	</tr>
+</thead>
+<?php foreach ($tpl['dat'] as $key => $value) { ?>
+  <tr>
+  <td>
+	  <?php echo($value['id']); ?>
+  </td>
+  <td>
+	  <?php echo($value['email' ]); ?>
+  </td>
+  <td>
+	  <?php echo($value['up_date' ]); ?>
+  </td>
+  <td style="text-align:center;">
+   <p><a href="./?fn=admin_user_edit&id=<?php echo ($value['id']); ?>" class="btn btn-primary">edit</a></p>
+  <!--    <a href="./?fn=admin_user_edit&id=<?php echo ($value['id']); ?>">[ edit ]</a>
+   -->
+  </td>
+  </tr>
+<?php }?>
+</table>
+<br />
+<!-- paginate -->
+<?php for ($i=1; $i <= $tpl['pagination'] ; $i++) { ?>
+	<a href="./?fn=admin_user_list&page=<?php echo $i ?>">[ <?php echo $i; ?> ]</a>
+<?php } ?>
+

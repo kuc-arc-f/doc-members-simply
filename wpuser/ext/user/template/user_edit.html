@@ -1,0 +1,49 @@
+<html>
+<head>
+<script>
+  function user_delete(id){
+	  ret=window.confirm("このユーザーを削除しますか?\n");
+	  if(ret){
+	    window.location.href = './?fn=admin_user_delete&id='+ id;
+	  }
+  }
+</script>
+</head>
+<body>
+  <h1>ユーザー 編集</h1>
+  <form name="form1" method="POST"  action="./">
+    <input type="hidden"  value="user_update" name="fn" /><br />
+    <input type="hidden"  value="<?php echo $tpl['dat']['id'];  ?>" name="id" />
+    <div class="input-group">
+        <p> email: <?php echo $tpl['dat']['email'];  ?> </p><br />
+    </div>
+
+<!--
+    password:
+    <input type="text"  value="<?php echo $tpl['dat']['passwd'];  ?>" name="passwd" maxlength="12" /><br />
+-->
+    <div class="input-group">
+      <span class="input-group-addon" id="basic-addon1">password</span>
+      <input type="text" name="passwd" maxlength="12" class="form-control"
+       placeholder="password input" aria-describedby="basic-addon1" value="<?php echo $tpl['dat']['passwd'];  ?>">
+      </div>
+      <br />
+    <!--
+    uType: <?php echo $tpl['dat']['utype'];  ?> <br />
+
+    -->
+    <br />
+    <input type="submit" class="btn btn-primary"  value="Save" /><br />
+
+  </form>
+  <br />
+  <hr />
+  <a href="../../" class="btn btn-default"> Topへ</a><br>
+  <br />
+  <!--
+  <a href="#" onClick="user_delete(<?php echo $tpl['dat']['id'];  ?>);" >[ ユーザー削除  ]</a>
+   -->
+ 
+</body>
+</html>
+

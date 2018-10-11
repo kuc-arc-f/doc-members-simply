@@ -1,0 +1,22 @@
+<html>
+<head>
+</head>
+<body>
+  <h1>User Login</h1>
+  <form name="form1" method="POST"  action="/wpuser/ext/user/">
+    <input type="hidden"  value="user_login" name="fn" /><br />
+    email:
+    <input type="text"  value="" name="email" /><br />
+    password:
+    <input type="password"  value="" name="passwd" /><br />
+    <br />
+    <input type="submit"  value="Login" /><br />
+  </form>
+  <div><p style="color :red;"><?php echo($tpl['msg']); ?></p>
+  </div>
+  <br />
+  <a href="./?fn=user_add_show">[ ユーザー追加 ]</a>
+ 
+</body>
+</html>
+
