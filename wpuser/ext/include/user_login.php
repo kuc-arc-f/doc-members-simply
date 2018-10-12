@@ -23,6 +23,13 @@ class User_login {
 		return $ret;
 	}
 	//
+	function check_proc(){
+		if($this->check_login_forRoot()== false){
+			header("Location: ./ext/user/");
+			exit();
+		}
+	}
+	//
 	function login_show(){
 		require_once('../include/lib_inc.php');
 		$cls = new Lib_common();

@@ -16,10 +16,7 @@
 // add-user-auth
 require_once('./ext/include/user_login.php');
 $cls= new User_login();
-if($cls->check_login_forRoot()== false){
-	header("Location: ./ext/user/");
-	exit();
-}
+$cls->check_proc();
 
 //
 define('WP_USE_THEMES', true);
